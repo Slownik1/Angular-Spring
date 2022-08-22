@@ -15,17 +15,22 @@ public class UserModel {
     private String email;
 
     public UserModel(String name, String s) {
+            this.name=name;
+    }
 
+    public UserModel(String name) {
+        this.name=name;
+        this.email=name+"@domain.com";
     }
 
     public UserModel() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
