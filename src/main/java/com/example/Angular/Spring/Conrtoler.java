@@ -1,9 +1,6 @@
 package com.example.Angular.Spring;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,13 +13,13 @@ public class Conrtoler {
     }
     private final UserRepository userRepository;
 
-    @GetMapping("/users")
+    @GetMapping("/user")
     public List<UserModel> getUser(){
         return (List<UserModel>) userRepository.findAll();
     }
 
     @GetMapping("/users")
-    void addUser(UserModel user){
+    void addUser(@RequestBody UserModel user){
         userRepository.save(user);
     }
 
